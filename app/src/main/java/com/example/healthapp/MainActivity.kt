@@ -37,8 +37,16 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_home -> {
+                R.id.home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.news -> {
                     val intent = Intent(this, NewsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.goals -> {
+                    val intent = Intent(this, GoalsListActivity::class.java)
                     startActivity(intent)
                 }
             }

@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthApp">
         <activity
+            android:name=".CreateGoalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GoalsListActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewsActivity"
             android:exported="false" />
         <activity android:name=".MainActivity" />
