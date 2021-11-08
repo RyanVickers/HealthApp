@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="underLine">#BDB8B8</color>
+    <color name="colorPrimary">#f7f6f9</color>
+    <color name="colorPrimaryDark">#191819</color>
+    <color name="colorAccent">#191819</color>
+    <color name="grey">#eeefee</color>
+    <color name="red">#CE0700</color>
 </resources>
