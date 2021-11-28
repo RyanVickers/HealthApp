@@ -3,11 +3,10 @@ package com.example.healthapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.healthapp.databinding.ActivityGoalsBinding
+import com.example.healthapp.model.Goal
 
 class GoalsListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGoalsBinding
@@ -27,6 +26,7 @@ class GoalsListActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, CreateGoalActivity::class.java)
             startActivity(intent)
         }
+
     }
 
 }

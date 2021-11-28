@@ -4,27 +4,26 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.healthapp.model.Goal
+import com.example.healthapp.model.Appointment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class GoalListViewModel : ViewModel() {
-
-    private val goals = MutableLiveData<List<Goal>>()
+class AppointmentListViewModel : ViewModel() {
+    private val appointments = MutableLiveData<List<Appointment>>()
 
     init {
-        loadGoals()
+        loadAppointments()
     }
 
-    /*get goals*/
-    fun getGoals(): LiveData<List<Goal>> {
-        return goals
+    /*get appointments*/
+    fun getAppointments(): LiveData<List<Appointment>> {
+        return appointments
     }
 
-    /*Load goals from database */
-    private fun loadGoals() {
+    /*Load appointments from database */
+    private fun loadAppointments() {
         val userId = FirebaseAuth.getInstance().currentUser!!.uid
-        val db = FirebaseFirestore.getInstance().collection("goals").whereEqualTo("userId", userId)
+        val db = FirebaseFirestore.getInstance().collection("appointments").whereEqualTo("userId", userId)
 
 
         db.addSnapshotListener { documents, exception ->
@@ -34,13 +33,13 @@ class GoalListViewModel : ViewModel() {
                 return@addSnapshotListener
             }
 
-            val goalList = ArrayList<Goal>()
+            val appointmentList = ArrayList<Appointment>()
             documents?.let {
                 for (document in documents) {
-                    val goal = document.toObject(Goal::class.java)
-                    goalList.add(goal)
+                    val appointment = document.toObject(Appointment::class.java)
+                    appointmentList.add(appointment)
                 }
-                goals.value = goalList
+                appointments.value = appointmentList
             }
         }
     }

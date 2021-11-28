@@ -1,4 +1,4 @@
-package com.example.healthapp
+package com.example.healthapp.model
 
 /*User Class*/
 class User(

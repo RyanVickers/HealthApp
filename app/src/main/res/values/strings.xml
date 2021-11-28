@@ -27,4 +27,6 @@
     <string name="enter_goal_number">Enter Goal Amount</string>
     <string name="enter_goal_name">Enter Goal Name</string>
     <string name="add_goal">Add Goal</string>
+    <string name="goals">Goals</string>
+    <string name="add_appointment">Add Appointment</string>
 </resources>

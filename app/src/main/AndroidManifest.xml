@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthApp">
         <activity
+            android:name=".CreateAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateGoalActivity"
             android:exported="false" />
         <activity
@@ -18,8 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".NewsActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

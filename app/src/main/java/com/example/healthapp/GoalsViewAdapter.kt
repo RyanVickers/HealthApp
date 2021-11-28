@@ -1,23 +1,15 @@
 package com.example.healthapp
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.example.healthapp.model.Goal
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.gson.GsonBuilder
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.*
-import java.io.IOException
 
-private val client = OkHttpClient()
 
 class GoalsViewAdapter(
     val context: Context,
@@ -25,9 +17,7 @@ class GoalsViewAdapter(
 
 ) : RecyclerView.Adapter<GoalsViewAdapter.GoalViewHolder>() {
     inner class GoalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
-        val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
-        val goalNumberTextView = itemView.findViewById<TextView>(R.id.goalNumberTextView)
+        val goalCheckBox = itemView.findViewById<TextView>(R.id.goalCheckBox)
         val deleteButton = itemView.findViewById<Button>(R.id.deleteButton)
 
     }
@@ -50,14 +40,11 @@ class GoalsViewAdapter(
     override fun onBindViewHolder(holder: GoalViewHolder, position: Int) {
         val goal = goals[position]
         with(holder) {
-            nameTextView.text = goal.name
-            descriptionTextView.text = goal.description
-            goalNumberTextView.text = goal.number
+            goalCheckBox.text = goal.name
             deleteButton.setOnClickListener {
                 val id =goal.id
                 FirebaseFirestore.getInstance().collection("goals").document(id!!).delete()
             }
-
         }
     }
 }

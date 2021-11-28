@@ -45,5 +45,4 @@
         android:textColor="@android:color/white"
         android:visibility="gone"/>
 
-
 </RelativeLayout>

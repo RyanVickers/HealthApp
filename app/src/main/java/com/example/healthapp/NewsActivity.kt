@@ -1,13 +1,19 @@
 package com.example.healthapp
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_news.*
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 const val BASE_URL = "https://newsapi.org"
 
 class NewsActivity : AppCompatActivity() {
-
     lateinit var countdownTimer: CountDownTimer
     private var seconds = 3L
 
@@ -90,7 +95,10 @@ class NewsActivity : AppCompatActivity() {
         namesList.add(name)
         imagesList.add(image)
     }
+
+
 }
+
 
 
 
